@@ -14,7 +14,7 @@ void sorted_insert(listint_t **head, int n)
 
 	new = (listint_t *)malloc(sizeof(listint_t));
 	if (!new)
-		return (NULL);
+		printf("malloc failed\n");
 
 	new->n = n;
 	new->next = NULL;
