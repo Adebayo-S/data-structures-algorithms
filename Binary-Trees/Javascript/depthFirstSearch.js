@@ -16,6 +16,7 @@ const depthFirstValues = (root) => {
     return result;
 };
 
+// using recursion
 const depthFirstRec = (root) => {
     if (root == null) return [];
     const leftValues = depthFirstRec(root.left); // [b, d, e]
