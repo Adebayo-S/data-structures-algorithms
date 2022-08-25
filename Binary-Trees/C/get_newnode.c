@@ -20,6 +20,8 @@ struct node *getNewNode(int val)
 
     newNode = malloc(sizeof(struct node));
     newNode->key = val;
+    newNode->left = NULL;
+    newNode->right = NULL;
     return newNode;
 }
 
