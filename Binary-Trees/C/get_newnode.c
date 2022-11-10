@@ -1,12 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-struct node
-{
-    int key;
-    struct node *left;
-    struct node *right;
-};
+#include "main.h"
 
 /**
  * get a newnode with the provided value
