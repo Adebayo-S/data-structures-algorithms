@@ -6,6 +6,15 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
+
+// using the array.reduce
+function reverse(str) {
+    return str.split('').reduce((rev, char) => char + rev, '');
+}
+
+module.exports = reverse;
+
+
 // first draft
 function reverse(str) {
     let strlen = str.length;
@@ -31,10 +40,3 @@ function reverse(str) {
     arr.reverse();
     return arr.join(''); // converts array to string
 }
-
-// using the array.reduce
-function reverse(str) {
-    return str.split('').reduce((rev, char) => char + rev, '');
-}
-
-module.exports = reverse;

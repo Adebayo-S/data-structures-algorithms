@@ -1,5 +1,5 @@
 /*
- --- Directions
+ Directions
  Given a string, return a new string with the reversed
  order of characters
  --- Examples
@@ -9,16 +9,19 @@
 */
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 
-char* reverse(char* str)
+char *reverse(char *str)
 {
-    int i = 0;
-    char* reverse = NULL;
+  int i, j = 0;
+  char *reverse = NULL;
 
-    reverse = malloc(strlen(str) * sizeof(char));
+  reverse = malloc(strlen(str) * sizeof(char));
 
-    for ( i = 0; i < strlen(str); i++)
-    {
+  for (i = strlen(str) - 1; i >= 0; i--, j++)
+    reverse[j] = str[i];
 
-    }
+  reverse[j] = '\0';
+
+  return reverse;
 }
