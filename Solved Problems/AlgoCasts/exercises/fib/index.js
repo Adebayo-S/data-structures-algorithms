@@ -11,12 +11,12 @@
 function fib(n) {
     let result = [0, 1];
 
-    for (let i = 2; i < n; i++) {
+    for (let i = 1; i < n; i++) {
         let last = result.length - 1;
         let next = result[last] + result[last - 1];
         result.push(next);
     }
-    let fibSum = result[result.length - 1] + result[result.length - 2];
+    let fibSum = result[n];
     return fibSum;
 }
 
@@ -30,3 +30,28 @@ function fib(n) {
 
     return fib(n - 1) + fib(n - 2);
 }
+
+// memoization
+function memoize(fn) {
+    const cache = {};
+    return function(...args) {
+        if (cache[args]) {
+            return cache[args];
+        }
+
+        const result = fn.apply(this, args);
+        cache[args] = result;
+
+        return result;
+    };
+}
+
+function slowFib(n) {
+    if (n < 2) {
+        return n;
+    }
+
+    return slowFib(n - 1) + slowFib(n - 2);
+}
+
+const fib = memoize(slowFib);
